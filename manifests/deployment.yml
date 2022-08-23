@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: te2eexpressserver 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: te2eexpressserver
+  template:
+    metadata:
+      labels:
+        app: te2eexpressserver 
+    spec:
+      containers:
+        - name: te2eexpressserver 
+          image: devopsaks77.azurecr.io/te2eexpressserver
+          ports:
+          - containerPort: 443
